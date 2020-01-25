@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Github repositories search engine.
 
-Things you may want to cover:
 
-* Ruby version
+### How to run ?
 
-* System dependencies
+```
+> bundle install
+> bundle exec rails s
+```
 
-* Configuration
+or with Docker
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+> docker build -t github_repo .
+> docker run github_repo
+```
