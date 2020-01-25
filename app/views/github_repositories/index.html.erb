@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-offset-3 ">
+    <h2>Search Github repositories</h2>
+    <%= form_tag(github_repositories_path, method: :get, class: "form-inline") do %>
+      <%= text_field_tag :name, params[:name], required: true, class: "form-control input-lg" %>
+      <%= submit_tag 'Search', name: nil, class: "btn btn-primary input-lg" %>
+    <% end %>
+    <% @repositories&.each do |repository| %>
+      <h2> <%= link_to repository.full_name, repository.html_url %></h2>
+      <p><%= repository.description %></p>
+      <hr/>
+    <% end %>
+    <%== pagination(@repositories) %>
+  </div>
+</div>
