@@ -1,0 +1,20 @@
+FROM ruby:2.6.4
+
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+
+ENV RAILS_ROOT /var/www/github_browser
+RUN mkdir -p $RAILS_ROOT
+
+WORKDIR $RAILS_ROOT
+
+ENV RAILS_ENV='test'
+
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+
+RUN gem install bundler && bundle install
+
+COPY . .
+
+RUN chmod +x ./ci.sh
+ENTRYPOINT ["./ci.sh"]
