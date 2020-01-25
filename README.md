@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/maniodev/github_repositories_browser.svg?branch=master)](https://travis-ci.com/maniodev/github_repositories_browser)
+
 # README
 
 This is a simple Github repositories search engine.
